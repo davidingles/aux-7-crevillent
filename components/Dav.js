@@ -6,51 +6,122 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D CREVILLENTE.gltf");
+  const { nodes, materials } = useGLTF("/3D CREVILLENTE 2.gltf");
   return (
     <group {...props} dispose={null}>
-      <group position={[0.24, 0.14, -0.11]}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano001.geometry}
+        material={materials["Material.001"]}
+        position={[-0.17, 0.21, 0.19]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano002.geometry}
+        material={materials["Material.001"]}
+        position={[-0.17, 0.21, 0.19]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano003.geometry}
+        material={materials["Material.001"]}
+        position={[-0.13, 0.21, 0.53]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto.geometry}
+        material={materials["Material.001"]}
+        position={[0.17, 0, 0.38]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto001.geometry}
+        material={materials["Material.001"]}
+        position={[-0.15, 0, 0.56]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Texto002.geometry}
+        material={materials["Material.001"]}
+        position={[0.17, 0.21, 0.31]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+      />
+      <group
+        position={[0.14, 0.18, -0.11]}
+        rotation={[Math.PI, -1.06, Math.PI / 2]}
+      >
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["_3D---ARCHIVADOR_GRANDE_ARD-geom"].geometry}
-          material={materials["_3D---ARCHIVADOR_GRANDE_ARD_front"]}
+          geometry={nodes["TQ_ARD-geom"].geometry}
+          material={materials.TQ_ARD_front}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["_3D---ARCHIVADOR_GRANDE_ARD-geom_1"].geometry}
-          material={materials["_3D---ARCHIVADOR_GRANDE_ARD_back"]}
+          geometry={nodes["TQ_ARD-geom_1"].geometry}
+          material={materials.TQ_ARD_back}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["_3D---ARCHIVADOR_GRANDE_ARD-geom_2"].geometry}
-          material={materials["_3D---ARCHIVADOR_GRANDE_ARD_edge"]}
+          geometry={nodes["TQ_ARD-geom_2"].geometry}
+          material={materials.TQ_ARD_edge}
         />
       </group>
-      <group position={[-0.1, 0.18, 0.24]}>
+      <group position={[-0.1, 0.18, 0.38]} rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["_3D---ARCHIVADOR_GRANDE_ARD-geom001"].geometry}
-          material={materials["_3D---ARCHIVADOR_GRANDE_ARD_front.001"]}
+          geometry={nodes["TQ_ARD-geom"].geometry}
+          material={materials.TQ_ARD_front}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["_3D---ARCHIVADOR_GRANDE_ARD-geom001_1"].geometry}
+          geometry={nodes["TQ_ARD-geom_1"].geometry}
+          material={materials.TQ_ARD_back}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD-geom_2"].geometry}
+          material={materials.TQ_ARD_edge}
+        />
+      </group>
+      <group position={[-0.16, 0.2, 0.07]} rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD-geom001"].geometry}
+          material={materials["TQ_ARD_front.001"]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["TQ_ARD-geom001_1"].geometry}
           material={materials["back-dil"]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["_3D---ARCHIVADOR_GRANDE_ARD-geom001_2"].geometry}
-          material={materials["_3D---ARCHIVADOR_GRANDE_ARD_edge.001"]}
+          geometry={nodes["TQ_ARD-geom001_2"].geometry}
+          material={materials["TQ_ARD_edge.001"]}
         />
       </group>
     </group>
   );
 }
 
-useGLTF.preload("/3D CREVILLENTE.gltf");
+useGLTF.preload("/3D CREVILLENTE 2.gltf");
